@@ -1,0 +1,10 @@
+header {
+    display:inline;
+    background-color: royalblue;
+    color: black;
+    text-align: center;
+}
+
+.timerEl {
+    margin-bottom: 20px;
+}
