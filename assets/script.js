@@ -7,13 +7,14 @@ var message = 'Game Over';
 
 var timeLeft = 75;
 
-const start = document.getElementById("startBtn");
+var questions = {
 
-start.addEventListener("click", startQuiz)
+}
+const start = document.getElementById("startBtn")
+start.addEventListener("click", countDown)
 
-function startQuiz() {
-  
-  function countDown(event){
+//starts timer countdown
+ function countDown(event){
   event.preventDefault();
     //Sets interval in variable
   var timeInterval = setInterval(function() {
@@ -49,11 +50,17 @@ function displayMessage() {
      document.getElementById("gameStatus").innerHTML = "Game Over";
     }
   }
+
+// create a quiz section that asks questions about javascript and is multiple choice 
+var submitAnswer = function(){
+for (var i=0; i <questions.length; i++) {
+  var selectedAnswer = document.querySelector("choice")
+  }
 }
 
 
-// create a high scores button that shows the top 5 high scores of the game
-// create a quiz section that asks questions about javascript and is multiple choice 
-// when game is over player can save initials and score: highscores container that is hidden and then can be displayed when button or link pushed
 
+
+// when game is over player can save initials and score: highscores container that is hidden and then can be displayed when button or link pushed
+// create a high scores button that shows the top 5 high scores of the game
 
