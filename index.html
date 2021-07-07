@@ -9,24 +9,25 @@
 </head>
 <body>
     <header>Timed JavaScript Quiz</header>
-    <div class = "quizContainer">
+    <div class = "mainContainer">
       <h2 class= "welcome">Press start to begin your quiz!</h2>
       <div id= "startButton">
           <button id="startBtn">Start</button>
       </div>
       <div class = "timer">
-          <h1 id= "time">Timer:</h1>
+          <h1>Time:</h1>
+          <p id = "time"></p>
       </div>
-      <div id= "quiz">
-          <h1 id="gameStatus"></h1>
-          <div id="quizQuestion">
-              <p id="question"></p>
-          </div>
-          <div id ="answers">
-              <button id= "btn01"><span id="choice0"></span></button>
-              <button id= "btn02"><span id="choice0"></span></button>
-              <button id= "btn03"><span id="choice0"></span></button>
-              <button id= "btn04"><span id="choice0"></span></button>
+      <div id = "quiz">
+          <h1 id ="gameStatus"></h1>
+          <div id ="quizContainer">
+              <p id ="quizQuestion"></p>
+            <div id ="answerContainer">
+                <button class="answers" id= "A"></button>
+                <button class="answers" id= "B"></button>
+                <button class="answers" id= "C"></button>
+                <button class="answers" id= "D"></button>
+            </div>
           </div>
 
       </div>
@@ -35,5 +36,6 @@
 
 
     <script src="assets/script.js"></script>
+
 </body>
 </html>

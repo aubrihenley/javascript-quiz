@@ -1,55 +1,21 @@
 //  Global variables and selectors
 var timerEl = document.querySelector("#time");
-
 var quizEl = document.getElementById("quiz");
+var start = document.getElementById("startBtn");
+var questionAsked = document.getElementById("quizQuestion");
+var answerA = document.getElementById("A");
+var answerB = document.getElementById("B");
+var answerC = document.getElementById("C");
+var answerD = document.getElementById("D");
 
 var message = 'Game Over';
 
 var timeLeft = 75;
 
-
-
-// Quiz questions array
-let questions = [
-  {
-    questions:
-    options: [],
-    correct: 
-},
-{
-  questions: "Inside which HTML element do we put the JavaScript?"
-  options: ["<script>", "<js>", "<scripting>", "<javascript>"],
-  correct: 0
-},
-{
-  questions: "Where is the correct place to insert JavaScript?"
-  options: ["The <head> section", "The <body> section", "within a <div>", "After the footer"],
-  correct: 1
-},
-{
-  questions: "How do you write 'Hello World' in an alertr box?"
-  options: ["alertBox("Hello World");", "alert("Hello World");", "msgBox("Hello World");", "msg("Hello World");"],
-  correct: 
-},
-{
-  questions: "How do you create a function in JavaScript?"
-  options: ["function = myFunction()", "function:myFunction()", "function myFunction()", "create.function = myFunction"],
-  correct: 0
-},
-{
-  questions: "How do you call a function named 'myFunction'?"
-  options: ["call function myFunction()", "call myFunction()", "myFunction()", "myFunction(call)"],
-  correct: 2
-},
-{
-  questions: "How does a FOR Loop start"
-  options: ["for (i = 0; i <= 5)", "for (i <= 5; i++)", "for i = 1 to 5", "for (i = 0; i < 5; i++)"],
-  correct: 
-},
+let currentQuestion = 0;
 
 // create a timer that starts when the start button is pushed, time should be subtracted from countdown when a wrong answer is selected
-const start = document.getElementById("startBtn")
-start.addEventListener("click", countDown)
+document.getElementById("startBtn").addEventListener("click", countDown);
 
 //starts timer countdown
  function countDown(event){
@@ -90,15 +56,65 @@ function displayMessage() {
   }
 
 // create a quiz section that asks questions about javascript and is multiple choice 
-var submitAnswer = function(){
-for (var i=0; i <questions.length; i++) {
-  var selectedAnswer = document.querySelector("choice")
-  }
-}
+// Quiz questions array
+const quizQuestions = [
+  {
+    questions: "Inside which HTML element do we put the JavaScript?",
+    answerA : "<script>", 
+    answerB : "<js>", 
+    answerC : "<scripting>",
+    answerD : "<javascript>",
+    correct: "A"
+  },
+  {
+    questions: "Where is the correct place to insert JavaScript?",
+    answerA : "The <head> section",
+    answerB : "The <body> section",
+    answerC : "within a <div>",
+    answerD :"Both the <head> section and the <body> sectiona are correct",
+    correct: "D"
+  },
+  {
+    questions: "How do you write 'Hello World' in an alertr box?",
+    answerA : "alertBox('Hello World');",
+    answerB : "alert('Hello World');",
+    answerC : "msgBox('Hello World');",
+    answerD : "msg('Hello World');",
+    correct: "B"
+  },
+  {
+    questions: "How do you create a function in JavaScript?",
+    answerA : "function = myFunction()", 
+    answerB : "function:myFunction()", 
+    answerC : "function myFunction()", 
+    answerD : "create.function = myFunction",
+    correct: "C"
+  },
+  {
+    questions: "How do you call a function named 'myFunction'?",
+    answerA : "call function myFunction()", 
+    answerB : "call myFunction()", 
+    answerC : "myFunction()", 
+    answerD : "myFunction(call)",
+    correct: "C"
+  },
+  {
+    questions: "How does a FOR Loop start",
+    answerA: "for (i = 0; i <= 5)",
+    answerB : "for (i <= 5; i++)",
+    answerC : "for i = 1 to 5", 
+    answerD :"for (i = 0; i < 5; i++)",
+    correct: "D"
+  },]
+
+  //function to display questions
+// function displayQuestions() { 
+
+// }
+
 
 
 
 
 // when game is over player can save initials and score: highscores container that is hidden and then can be displayed when button or link pushed
-// create a high scores button that shows the top 5 high scores of the game
-
+// create a high scores button that shows the top 5 high scores of the games
