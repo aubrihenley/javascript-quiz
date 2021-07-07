@@ -2,20 +2,28 @@
 var timerEl = document.querySelector("#time");
 var quizEl = document.getElementById("quiz");
 var start = document.getElementById("startBtn");
-var questionAsked = document.getElementById("quizQuestion");
+var questionAsked = document.getElementById("Question");
+var highScore = document.getElementById("highScores");
 var answerA = document.getElementById("A");
 var answerB = document.getElementById("B");
 var answerC = document.getElementById("C");
 var answerD = document.getElementById("D");
+ 
+// const question = getElementById("Question");
 
 var message = 'Game Over';
 
 var timeLeft = 75;
 
-let currentQuestion = 0;
+let startingQuestion = 0;
 
 // create a timer that starts when the start button is pushed, time should be subtracted from countdown when a wrong answer is selected
-document.getElementById("startBtn").addEventListener("click", countDown);
+document.getElementById("startBtn").addEventListener("click", startQuiz);
+
+function startQuiz(event) {
+  countDown(event);
+  displayQuestion(event);
+}
 
 //starts timer countdown
  function countDown(event){
@@ -54,10 +62,17 @@ function displayMessage() {
      document.getElementById("gameStatus").innerHTML = "Game Over";
     }
   }
+// }
+
 
 // create a quiz section that asks questions about javascript and is multiple choice 
 // Quiz questions array
+var lastQuestion = quizQuestions.length -1;
+
+function displayQuestion() {
+
 const quizQuestions = [
+  
   {
     questions: "Inside which HTML element do we put the JavaScript?",
     answerA : "<script>", 
@@ -71,7 +86,7 @@ const quizQuestions = [
     answerA : "The <head> section",
     answerB : "The <body> section",
     answerC : "within a <div>",
-    answerD :"Both the <head> section and the <body> sectiona are correct",
+    answerD : "Both the <head> section and the <body> sectiona are correct",
     correct: "D"
   },
   {
@@ -103,18 +118,33 @@ const quizQuestions = [
     answerA: "for (i = 0; i <= 5)",
     answerB : "for (i <= 5; i++)",
     answerC : "for i = 1 to 5", 
-    answerD :"for (i = 0; i < 5; i++)",
+    answerD : "for (i = 0; i < 5; i++)",
     correct: "D"
   },]
 
   //function to display questions
-// function displayQuestions() { 
 
-// }
+  let q = quizQuestions[startingQuestion];
+  
+  questionAsked.innerHTML = q.questions;
+
+  answerA.textContent = q.answerA;
+
+  answerB.textContent = q.answerB;
+
+  answerC.textContent = q.answerC;
+
+  answerD.textContent = q.answerD;
+}
 
 
 
 
 
-// when game is over player can save initials and score: highscores container that is hidden and then can be displayed when button or link pushed
-// create a high scores button that shows the top 5 high scores of the games
+// // when game is over player can save initials and score: highscores container that is hidden and then can be displayed when button or link pushed
+// highScoreBtn.addEventListener("click", function,(event) {
+//   var player = {
+//     initials: 
+
+//   }
+// })

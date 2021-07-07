@@ -7,21 +7,27 @@
     <link rel="stylesheet" href="assets/style.css">
     <title>JavaScript Quiz</title>
 </head>
-<body>
     <header>Timed JavaScript Quiz</header>
+<body>
     <div class = "mainContainer">
-      <h2 class= "welcome">Press start to begin your quiz!</h2>
-      <div id= "startButton">
-          <button id="startBtn">Start</button>
+      <div id="welcomeMain" class="flex-center flex-column">
+        <h2 class= "welcome">Press start to begin your quiz!</h2>
+        <div id= "startButton">
+            <button id="startBtn">Start</button>
+        </div>
+        <br>
+        <div id="scores">
+            <button id="highScoresBtn">High Scores</button>
+        </div>
       </div>
       <div class = "timer">
-          <h1>Time:</h1>
+          <h2>Time:</h2>
           <p id = "time"></p>
       </div>
       <div id = "quiz">
           <h1 id ="gameStatus"></h1>
           <div id ="quizContainer">
-              <p id ="quizQuestion"></p>
+              <p id ="Question"></p>
             <div id ="answerContainer">
                 <button class="answers" id= "A"></button>
                 <button class="answers" id= "B"></button>
@@ -29,8 +35,10 @@
                 <button class="answers" id= "D"></button>
             </div>
           </div>
-
+        
       </div>
+      <div id = "highScores"></div>
+        
     </div>
 
 
