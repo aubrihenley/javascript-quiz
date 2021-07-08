@@ -50,10 +50,10 @@ function startQuiz(event) {
 }
 
 // subtract 10 seconds for wrong answers
-document.getElementById('isWrong').addEventListener('click', function(){
+function isWrong() {
   timeLeft -= 10;
   document.getElementById('time').innerHTML= timeLeft;
-});
+}
 
 // function to create game over message
 function displayMessage() {
@@ -62,8 +62,6 @@ function displayMessage() {
      document.getElementById("gameStatus").innerHTML = "Game Over";
     }
   }
-// }
-
 
 // create a quiz section that asks questions about javascript and is multiple choice 
 // Quiz questions array
@@ -137,7 +135,14 @@ const quizQuestions = [
   answerD.textContent = q.answerD;
 }
 
-
+//adding event listeners to answers buttons to check for correct answer
+document.getElementById("A").addEventListener("click", function(){
+  if (q.answerA = q.correct){
+    q++;
+  } else {
+    isWrong();
+  }
+});
 
 
 
