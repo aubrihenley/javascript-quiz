@@ -22,7 +22,7 @@ document.getElementById("startBtn").addEventListener("click", startQuiz);
 
 function startQuiz(event) {
   countDown(event);
-  displayQuestion(event);
+  displayQuestion(event, quizQuestions);
 }
 
 //starts timer countdown
@@ -65,10 +65,7 @@ function displayMessage() {
 
 // create a quiz section that asks questions about javascript and is multiple choice 
 // Quiz questions array
-var lastQuestion = quizQuestions.length -1;
-
-function displayQuestion() {
-
+// var lastQuestion = quizQuestions.length -1;
 const quizQuestions = [
   
   {
@@ -118,11 +115,16 @@ const quizQuestions = [
     answerC : "for i = 1 to 5", 
     answerD : "for (i = 0; i < 5; i++)",
     correct: "D"
-  },]
+  }
+];
 
+var lastQuestion = quizQuestions.length -1;
+
+function displayQuestion(array) {
+  console.log(array) ;
   //function to display questions
 
-  let q = quizQuestions[startingQuestion];
+  let q = array[startingQuestion];
   
   questionAsked.innerHTML = q.questions;
 
@@ -135,6 +137,7 @@ const quizQuestions = [
   answerD.textContent = q.answerD;
 }
 
+
 //adding event listeners to answers buttons to check for correct answer
 document.getElementById("A").addEventListener("click", function(){
   if (q.answerA = q.correct){
@@ -143,6 +146,16 @@ document.getElementById("A").addEventListener("click", function(){
     isWrong();
   }
 });
+
+document.getElementById("B").addEventListener("click", function(){
+  if (q.answerB = q.correct){
+    q++;
+  } else {
+    isWrong();
+  }
+});
+
+
 
 
 
